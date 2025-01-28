@@ -13,11 +13,13 @@ const ChatForm = ({ chatHistory ,setChatHistory , generateBotResponse}) => {
 
        setChatHistory((history) => [...history,{role:"user",text:userMessage}])
 
+       inputRef.current.value = "";
+
        setTimeout(() => {
-        // Add "Thinking..." message to chat history
+      
         setChatHistory((history) => [...history, { role: "model", text: "Thinking..." }]);
   
-        // Generate bot response
+      
         generateBotResponse([...chatHistory, { role: "user", text: userMessage }]);
       }, 600);
 

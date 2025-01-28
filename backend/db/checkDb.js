@@ -10,7 +10,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
   }
 });
 
-// Fetch all messages from the database
 db.all('SELECT * FROM messages', [], (err, rows) => {
   if (err) {
     console.error('Error fetching data', err.message);
@@ -19,5 +18,5 @@ db.all('SELECT * FROM messages', [], (err, rows) => {
   }
 });
 
-// Close the database connection
+
 db.close();
